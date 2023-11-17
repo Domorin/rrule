@@ -36,7 +36,6 @@ export default class IterResult<M extends QueryMethodTypes> {
       this.maxDate = args.inc ? args.dt : new Date(args.dt.getTime() - 1)
     } else if (method === 'after') {
       this.minDate = args.inc ? args.dt : new Date(args.dt.getTime() + 1)
-      console.log('minDate:', this.minDate)
     }
   }
 

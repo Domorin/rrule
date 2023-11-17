@@ -218,21 +218,5 @@ export const dateInTimeZone = function (date: Date, timeZone: string) {
     .setZone(timeZone, { keepLocalTime: true })
     .toUTC()
 
-  const localTimezone = DateTime.local().zoneName
-  const dateInLocalTZ = DateTime.fromJSDate(date).setZone(localTimezone)
-  const dateInTargetTZ = DateTime.fromJSDate(date).setZone(timeZone)
-  const tzOffset = (dateInTargetTZ.offset - dateInLocalTZ.offset) * 60 * 1000
-
-  // const localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
-  // // Date constructor can only reliably parse dates in ISO8601 format
-  // const dateInLocalTZ = new Date(dateTZtoISO8601(date, localTimeZone))
-  // const dateInTargetTZ = new Date(dateTZtoISO8601(date, timeZone ?? 'UTC'))
-  // const tzOffset = dateInTargetTZ.getTime() - dateInLocalTZ.getTime()
-
-  console.log('dateInTimeZone:', {
-    date_thing: date_thing.toISO(),
-    old: new Date(date.getTime() - tzOffset).toISOString(),
-  })
-
   return date_thing.toJSDate()
 }

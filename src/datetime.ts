@@ -135,10 +135,8 @@ export class DateTime extends Time {
   }
 
   public addDaily(days: number) {
-    console.log('addDaily:', `adding ${days} to day (current ${this.day})`)
     this.day += days
     this.fixDay()
-    console.log('addDaily:', `Result after fixing: ${this.day}`)
   }
 
   public addHours(hours: number, filtered: boolean, byhour: number[]) {
