@@ -213,8 +213,6 @@ const dateTZtoISO8601 = function (date: Date, timeZone: string) {
 }
 
 export const dateInTimeZone = function (date: Date, timeZone: string) {
-  console.log('hello from rrule')
-
   const localTimezone = DateTime.local().zoneName
   const dateInLocalTZ = DateTime.fromJSDate(date).setZone(localTimezone)
   const dateInTargetTZ = DateTime.fromJSDate(date).setZone(timeZone)
