@@ -213,6 +213,11 @@ const dateTZtoISO8601 = function (date: Date, timeZone: string) {
 }
 
 export const dateInTimeZone = function (date: Date, timeZone: string) {
+  // Date is a UTC time in timezone
+  const date_thing = DateTime.fromJSDate(date)
+    .setZone(timeZone, { keepLocalTime: true })
+    .toUTC()
+
   const localTimezone = DateTime.local().zoneName
   const dateInLocalTZ = DateTime.fromJSDate(date).setZone(localTimezone)
   const dateInTargetTZ = DateTime.fromJSDate(date).setZone(timeZone)
@@ -223,6 +228,11 @@ export const dateInTimeZone = function (date: Date, timeZone: string) {
   // const dateInLocalTZ = new Date(dateTZtoISO8601(date, localTimeZone))
   // const dateInTargetTZ = new Date(dateTZtoISO8601(date, timeZone ?? 'UTC'))
   // const tzOffset = dateInTargetTZ.getTime() - dateInLocalTZ.getTime()
+
+  console.log('dateInTimeZone:', {
+    date_thing: date_thing.toISO(),
+    old: new Date(date.getTime() - tzOffset).toISOString(),
+  })
 
   return new Date(date.getTime() - tzOffset)
 }
