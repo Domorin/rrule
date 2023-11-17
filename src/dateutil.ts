@@ -213,13 +213,12 @@ const dateTZtoISO8601 = function (date: Date, timeZone: string) {
 }
 
 export const dateInTimeZone = function (date: Date, timeZone: string) {
-  console.log('hello from rrule');
+  console.log('hello from rrule')
 
-  const localTimezone = DateTime.local().zoneName;
-  const dateInLocalTZ = DateTime.fromJSDate(date).setZone(localTimezone);
-  const dateInTargetTZ = DateTime.fromJSDate(date).setZone(timeZone);
-  const tzOffset = (dateInTargetTZ.offset - dateInLocalTZ.offset) * 60 * 1000;
-
+  const localTimezone = DateTime.local().zoneName
+  const dateInLocalTZ = DateTime.fromJSDate(date).setZone(localTimezone)
+  const dateInTargetTZ = DateTime.fromJSDate(date).setZone(timeZone)
+  const tzOffset = (dateInTargetTZ.offset - dateInLocalTZ.offset) * 60 * 1000
 
   // const localTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
   // // Date constructor can only reliably parse dates in ISO8601 format
