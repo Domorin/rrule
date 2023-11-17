@@ -53,6 +53,7 @@
   "devDependencies": {
     "@types/assert": "^1.4.3",
     "@types/jest": "^29.5.8",
+    "@types/luxon": "^3.2.0",
     "@types/mockdate": "^3.0.0",
     "@types/node": "^17.0.41",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
@@ -86,6 +87,7 @@
   ],
   "peerDependencies": {},
   "dependencies": {
-    "tslib": "^2.4.0"
+    "tslib": "^2.4.0",
+    "luxon": "^3.2.1"
   }
 }
