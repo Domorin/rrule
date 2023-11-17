@@ -234,5 +234,5 @@ export const dateInTimeZone = function (date: Date, timeZone: string) {
     old: new Date(date.getTime() - tzOffset).toISOString(),
   })
 
-  return date_thing.toJSDate();
+  return date_thing.toJSDate()
 }
