@@ -46,6 +46,7 @@ export function iter<M extends QueryMethodTypes>(
         }
 
         if (res >= dtstart) {
+          console.log('rezoning on line 49')
           const rezonedDate = rezoneIfNeeded(res, options)
           if (!iterResult.accept(rezonedDate)) {
             return emitResult(iterResult)
@@ -75,6 +76,7 @@ export function iter<M extends QueryMethodTypes>(
           }
 
           if (res >= dtstart) {
+            console.log('rezoning on line 79')
             const rezonedDate = rezoneIfNeeded(res, options)
             if (!iterResult.accept(rezonedDate)) {
               return emitResult(iterResult)

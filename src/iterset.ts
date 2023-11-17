@@ -55,6 +55,7 @@ export function iterSet<M extends QueryMethodTypes>(
   }
 
   for (let i = 0; i < _rdate.length; i++) {
+    console.log('Looping through rdates')
     const zonedDate = new DateWithZone(_rdate[i], tzid).rezonedDate()
     if (!iterResult.accept(new Date(zonedDate.getTime()))) break
   }
