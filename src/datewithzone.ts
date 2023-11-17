@@ -30,9 +30,15 @@ export class DateWithZone {
   }
 
   public rezonedDate() {
+    console.log('rezonedDate: before', this.date.toISOString())
     if (this.isUTC) {
       return this.date
     }
+
+    console.log(
+      'rezonedDate: after',
+      dateInTimeZone(this.date, this.tzid).toISOString()
+    )
 
     return dateInTimeZone(this.date, this.tzid)
   }
