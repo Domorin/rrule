@@ -20,10 +20,7 @@ export function iter<M extends QueryMethodTypes>(
     return emitResult(iterResult)
   }
 
-  console.log('dtstart', dtstart.toISOString());
   const counterDate = DateTime.fromDate(dtstart)
-
-  console.log('counterDate', counterDate.getTime())
 
   const ii = new Iterinfo(options)
   ii.rebuild(counterDate.year, counterDate.month)
@@ -70,8 +67,6 @@ export function iter<M extends QueryMethodTypes>(
         }
 
         const date = fromOrdinal(ii.yearordinal + currentDay)
-
-        console.log('date from ordinal', date.toISOString())
         for (let k = 0; k < timeset.length; k++) {
           const time = timeset[k]
           const res = combine(date, time)
@@ -81,8 +76,6 @@ export function iter<M extends QueryMethodTypes>(
 
           if (res >= dtstart) {
             const rezonedDate = rezoneIfNeeded(res, options)
-
-            console.log('rezonedDate', rezonedDate.toISOString())
             if (!iterResult.accept(rezonedDate)) {
               return emitResult(iterResult)
             }
