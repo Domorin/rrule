@@ -207,14 +207,9 @@ export const untilStringToDate = function (until: string) {
 
 export const dateInTimeZone = function (date: Date, timeZone: string) {
   // Date is a UTC time in timezone
-
-  console.log('before', date.toISOString())
-
   const date_thing = DateTime.fromJSDate(date)
     .setZone(timeZone, { keepLocalTime: true })
     .toUTC()
-
-  console.log('after', date_thing.toISO());
 
   return date_thing.toJSDate()
 }
