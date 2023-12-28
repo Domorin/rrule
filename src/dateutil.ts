@@ -214,7 +214,7 @@ export const dateInTimeZone = function (date: Date, timeZone: string) {
     .setZone(timeZone, { keepLocalTime: true })
     .toUTC()
 
-  console.log('after', date_thing.toISO())
+  console.log('after', date_thing.toISO());
 
   return date_thing.toJSDate()
 }
