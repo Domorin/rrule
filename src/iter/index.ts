@@ -20,7 +20,7 @@ export function iter<M extends QueryMethodTypes>(
     return emitResult(iterResult)
   }
 
-  console.log('dtstart', dtstart.toISOString())
+  console.log('dtstart', dtstart.toISOString());
   const counterDate = DateTime.fromDate(dtstart)
 
   console.log('counterDate', counterDate.getTime())
