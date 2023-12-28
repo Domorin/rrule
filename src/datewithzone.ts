@@ -31,11 +31,8 @@ export class DateWithZone {
 
   public rezonedDate() {
     if (this.isUTC) {
-      console.log(this.date.toISOString(), 'isUTC - returning date')
       return this.date
     }
-
-    console.log(this.date.toISOString(), 'not UTC - rezoning to', this.tzid)
 
     return dateInTimeZone(this.date, this.tzid)
   }
